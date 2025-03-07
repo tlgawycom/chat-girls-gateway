@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Sparkles } from 'lucide-react';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,14 +17,19 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-2 glass-effect shadow-md' : 'py-4 bg-transparent'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 relative">
           <img 
             src="https://i.imgur.com/KJVrGnM.png" 
             alt="شات مرسال العرب"
             className="h-10 w-auto"
           />
-          <h1 className="text-2xl font-bold text-chat-dark">
-            <span className="text-chat-accent">شات</span> مرسال العرب
+          <h1 className="text-2xl font-lalezar text-chat-dark relative group">
+            <span className="text-chat-accent group-hover:animate-pulse-soft">شات</span>
+            <span className="mx-1 relative">
+              مرسال
+              <Sparkles className="w-3 h-3 text-yellow-400 absolute -top-2 right-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </span>
+            <span>العرب</span>
           </h1>
         </div>
       </div>

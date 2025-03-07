@@ -1,6 +1,6 @@
 
-import { useState } from 'react';
-import { Users, Heart, MessageCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Users, Heart, MessageCircle, Sparkles } from 'lucide-react';
 
 interface ChatRoomProps {
   name: string;
@@ -12,6 +12,7 @@ interface ChatRoomProps {
 
 const ChatRoom = ({ name, description, image, users, chatLink }: ChatRoomProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [loved, setLoved] = useState(false);
 
   return (
     <div 
@@ -27,26 +28,38 @@ const ChatRoom = ({ name, description, image, users, chatLink }: ChatRoomProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <div className="absolute bottom-0 right-0 p-4">
-          <h3 className="text-xl font-bold text-white mb-1">{name}</h3>
+          <h3 className="text-xl font-lalezar text-white mb-1 relative group">
+            {name}
+            {isHovered && (
+              <Sparkles className="w-3 h-3 absolute -top-2 -right-4 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+            )}
+          </h3>
           <div className="flex items-center gap-2 text-white/80">
             <Users className="w-4 h-4" />
             <span className="text-sm">{users} متصل</span>
           </div>
         </div>
         
-        <div className={`absolute top-3 left-3 bg-white/90 rounded-full p-1.5 transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}>
-          <Heart className={`w-4 h-4 ${isHovered ? 'text-pink-500' : 'text-chat-primary'}`} />
-        </div>
+        <button 
+          className={`absolute top-3 left-3 bg-white/90 rounded-full p-1.5 transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}
+          onClick={(e) => {
+            e.preventDefault();
+            setLoved(!loved);
+          }}
+        >
+          <Heart className={`w-4 h-4 transition-colors duration-300 ${loved ? 'text-pink-500 fill-pink-500' : isHovered ? 'text-pink-500' : 'text-chat-primary'}`} />
+        </button>
       </div>
       
       <div className="p-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{description}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 font-amiri">{description}</p>
         <a 
           href={chatLink}
-          className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-chat-light dark:bg-chat-accent/10 text-chat-accent transition-all duration-300 hover:bg-chat-accent hover:text-white"
+          className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-chat-light dark:bg-chat-accent/10 text-chat-accent transition-all duration-300 hover:bg-chat-accent hover:text-white group"
         >
           <MessageCircle className="w-4 h-4" />
           <span>دخول الغرفة</span>
+          <Sparkles className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
         </a>
       </div>
     </div>

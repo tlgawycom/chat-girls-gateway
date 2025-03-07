@@ -79,6 +79,8 @@ export default {
 			fontFamily: {
 				'tajawal': ['Tajawal', 'sans-serif'],
 				'amiri': ['Amiri', 'serif'],
+				'aref': ['Aref Ruqaa', 'serif'],
+				'lalezar': ['Lalezar', 'cursive'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -94,8 +96,8 @@ export default {
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
 				'float': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
+					'0%, 100%': { transform: 'translateY(0) rotate(0)' },
+					'50%': { transform: 'translateY(-15px) rotate(5deg)' }
 				},
 				'pulse-soft': {
 					'0%, 100%': { opacity: '1' },
@@ -112,6 +114,10 @@ export default {
 					'50%': { 
 						'box-shadow': '0 0 25px 5px rgba(225, 169, 202, 0.6)' 
 					}
+				},
+				'magic-spark': {
+					'0%': { transform: 'scale(0) rotate(0deg)', opacity: '1' },
+					'100%': { transform: 'scale(1) rotate(180deg)', opacity: '0' }
 				}
 			},
 			animation: {
@@ -121,7 +127,8 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
 				'scale-in': 'scale-in 0.3s ease-out',
-				'glow': 'glow 2s ease-in-out infinite'
+				'glow': 'glow 2s ease-in-out infinite',
+				'magic-spark': 'magic-spark 0.5s linear forwards'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
