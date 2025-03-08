@@ -1,6 +1,6 @@
 
-import { useState, useEffect } from 'react';
-import { Users, Heart, MessageCircle, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { Users, Heart, MessageCircle } from 'lucide-react';
 
 interface ChatRoomProps {
   name: string;
@@ -28,11 +28,8 @@ const ChatRoom = ({ name, description, image, users, chatLink }: ChatRoomProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <div className="absolute bottom-0 right-0 p-4">
-          <h3 className="text-xl font-lalezar text-white mb-1 relative group">
+          <h3 className="text-xl font-lalezar text-white mb-1">
             {name}
-            {isHovered && (
-              <Sparkles className="w-3 h-3 absolute -top-2 -right-4 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-            )}
           </h3>
           <div className="flex items-center gap-2 text-white/80">
             <Users className="w-4 h-4" />
@@ -47,7 +44,7 @@ const ChatRoom = ({ name, description, image, users, chatLink }: ChatRoomProps) 
             setLoved(!loved);
           }}
         >
-          <Heart className={`w-4 h-4 transition-colors duration-300 ${loved ? 'text-pink-500 fill-pink-500' : isHovered ? 'text-pink-500' : 'text-chat-primary'}`} />
+          <Heart className={`w-4 h-4 ${loved ? 'text-pink-500 fill-pink-500' : 'text-gray-500'}`} />
         </button>
       </div>
       
@@ -55,11 +52,10 @@ const ChatRoom = ({ name, description, image, users, chatLink }: ChatRoomProps) 
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 font-amiri">{description}</p>
         <a 
           href={chatLink}
-          className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-[#F2FCE2] text-[#9D4EDD] transition-all duration-300 hover:bg-[#E5DEFF] group"
+          className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors duration-300"
         >
           <MessageCircle className="w-4 h-4" />
           <span>دخول الغرفة</span>
-          <Sparkles className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
         </a>
       </div>
     </div>
