@@ -55,7 +55,7 @@ const ChatRoom = ({ name, description, image, users, chatLink }: ChatRoomProps) 
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 font-amiri">{description}</p>
         <a 
           href={chatLink}
-          className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-chat-accent text-white transition-all duration-300 hover:bg-chat-accent/90 hover:shadow-md group"
+          className="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-[#F2FCE2] text-[#9D4EDD] transition-all duration-300 hover:bg-[#E5DEFF] group"
         >
           <MessageCircle className="w-4 h-4" />
           <span>دخول الغرفة</span>
