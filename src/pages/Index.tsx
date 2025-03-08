@@ -1,10 +1,10 @@
-
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import ChatButton from '../components/ChatButton';
 import ChatRoom from '../components/ChatRoom';
 import SearchTag from '../components/SearchTag';
 import Footer from '../components/Footer';
+import StarCursor from '../components/StarCursor';
 import { Star, Sparkles, Music, Zap } from 'lucide-react';
 
 const CHAT_LINK = "https://www.mersalarab.com/"; // Updated chat link
@@ -100,6 +100,7 @@ const Index = () => {
   return (
     <div className={`min-h-screen bg-chat-gradient transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} overflow-hidden`}>
       <Header />
+      <StarCursor />
       
       {/* Floating Icons */}
       {floatingIcons.map(icon => (

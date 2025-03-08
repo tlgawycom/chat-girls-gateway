@@ -140,3 +140,13 @@
   0% { transform: scale(0) rotate(0deg); opacity: 1; }
   100% { transform: scale(1) rotate(180deg); opacity: 0; }
 }
+
+@keyframes fade-out {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+.animate-fade-out {
+  animation: fade-out 1s forwards;
+}
+

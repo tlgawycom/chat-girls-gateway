@@ -19,9 +19,9 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center gap-2 relative">
           <img 
-            src="https://i.imgur.com/KJVrGnM.png" 
+            src="/lovable-uploads/7ac7317b-510a-4760-bf4c-950675d2d716.png" 
             alt="شات مرسال العرب"
-            className="h-10 w-auto"
+            className="h-16 w-auto"
           />
           <h1 className="text-2xl font-lalezar text-chat-dark relative group">
             <span className="text-chat-accent group-hover:animate-pulse-soft">شات</span>
