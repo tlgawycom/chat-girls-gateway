@@ -119,7 +119,7 @@ const Index = () => {
       ))}
       
       {/* Hero Section */}
-      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
+      <section className="relative pt-36 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col items-center text-center">
             <div className="inline-block px-3 py-1 mb-6 text-xs font-medium text-chat-accent bg-chat-light rounded-full animate-fade-in relative group">

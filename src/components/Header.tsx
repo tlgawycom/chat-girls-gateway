@@ -19,7 +19,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center gap-2 relative">
           <img 
-            src="/lovable-uploads/7ac7317b-510a-4760-bf4c-950675d2d716.png" 
+            src="/lovable-uploads/5c027f3a-d105-44a2-929e-d5a3b54a2d23.png" 
             alt="شات مرسال العرب"
             className="h-16 w-auto"
           />
